@@ -1,0 +1,12 @@
+.table {
+    margin: 1px 0 70px;
+}
+
+#myTabContent img {
+    width: 60px;
+    height: 40px;
+}
+
+.navbar div.collapse li.user {
+    margin-top: 4px;
+}

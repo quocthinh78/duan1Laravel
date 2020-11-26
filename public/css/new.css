@@ -1,0 +1,67 @@
+#new {
+    padding-top: 125px;
+    padding-bottom: 90px;
+    background: #ffffff;
+}
+
+#new div.section-title {
+    margin-bottom: 50px;
+}
+
+#new div.section-title h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+#new div.section-title span {
+    width: 50px;
+    height: 1px;
+    background-color: #00ADEE;
+    display: block;
+}
+
+#new div.box-service {
+    margin-top: 30px;
+    text-align: center;
+    background: #ffffff;
+    padding: 70px 25px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 1px 5px rgba(72, 73, 121, 0.15);
+}
+
+#new div.box-service p {
+    font-size: 14px;
+}
+
+#new span.st-border {
+    width: 50px;
+    height: 1px;
+    background-color: #00ADEE;
+    display: block;
+}
+
+#new img {
+    width: 300px;
+    height: 170px;
+}
+
+#new p.title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#new p.content {
+    color: black;
+}
+
+#new span.tinh {
+    color: #cc4747;
+}
+
+#new .new {
+    padding: 40px 0;
+    border-bottom: 1px solid #ccc;
+}

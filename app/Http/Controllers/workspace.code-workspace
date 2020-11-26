@@ -1,0 +1,14 @@
+{
+    "folders": [
+		{
+			"path": "../../../../loginLaravel"
+		},
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../ajax"
+		}
+	],
+    "settings": {}
+}

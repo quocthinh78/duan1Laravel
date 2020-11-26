@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#layoutAuthentication {
+    margin: 100px auto;
+    width: 500px;
+    height: auto;
+    background-color: #c8c2c2;
+    padding: 30px 50px;
+}
+
+#layoutAuthentication div.card-header h3 {
+    text-align: center;
+    font-size: 33px;
+}

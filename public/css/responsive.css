@@ -1,0 +1,87 @@
+@media (min-width: 992px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* For mobile phones: */
+    /* attackment */
+    #attackment {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    #slider {
+        margin-top: 81px;
+    }
+    /* menu */
+    .navbar-white a.nav-link {
+        padding-bottom: 10px !important;
+    }
+    .navbar-white div.menu {
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        min-width: 100%;
+    }
+    /* navbar */
+    .navbar-white a.nav-link {
+        padding-bottom: 10px !important;
+    }
+    .navbar-white div.menu {
+        margin-top: 4px;
+        margin: 0 -15px;
+        padding: 0 15px;
+        background-color: #f1f1f1
+    }
+    .nav {
+        margin: 7.5px -15px !important;
+    }
+    /* slider */
+    #slider {
+        margin-top: 81px;
+    }
+    #slider div.carousel-inner .carousel-item img {
+        max-width: 100%;
+        height: 300px;
+    }
+    #slider div.carousel-inner .carousel-caption h1 {
+        font-size: 23px;
+        margin-bottom: 20px;
+        line-height: 20px;
+        letter-spacing: 2px;
+        font-weight: 100;
+    }
+    #slider div.carousel-inner .carousel-caption h2 {
+        font-size: 27px;
+        margin-bottom: 10px;
+    }
+    #slider div.carousel-inner .carousel-caption {
+        top: 65%;
+        position: absolute;
+    }
+    #attackment {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    /* works */
+    #works div.works-box img {
+        height: 330px;
+    }
+    #works div.works {
+        margin-bottom: 30px;
+    }
+    #works div.box-overflow {
+        height: 330px;
+    }
+    #fact div.fact-content {
+        text-align: center;
+        border-right: none;
+    }
+    /* footer */
+    #footer div.footer-icon {
+        text-align: center;
+    }
+    #footer div.footer-text {
+        text-align: center;
+    }
+}
