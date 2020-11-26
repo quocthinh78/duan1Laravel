@@ -13,6 +13,7 @@
                                 <div class="card-body">
                                     <form action="{{url('post-loginUser')}}" method="POST" id="logForm">
                                         {{ csrf_field() }}
+                                        aaaaa
                                         <p>sdsa</p>\
                                         pfds
                                         <div class="form-group">
@@ -41,6 +42,7 @@
                                 <div class="card-footer text-center">
                                     <div class="small"><a onclick="showRegister()" >Chưa có tài khoản? Đăng ký!</a></div>
                                 </div>
+                                ccccccc
                             </div>
                         </div>
                     </div>
