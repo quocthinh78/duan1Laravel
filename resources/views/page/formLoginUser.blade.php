@@ -13,6 +13,8 @@
                                 <div class="card-body">
                                     <form action="{{url('post-loginUser')}}" method="POST" id="logForm">
                                         {{ csrf_field() }}
+                                        <p>sdsa</p>\
+                                        pfds
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputEmailAddress">Email</label>
                                             <input class="form-control py-4" id="inputEmailAddress" name="email" type="email" placeholder="Địa chỉ Email" /> @if ($errors->has('email'))
