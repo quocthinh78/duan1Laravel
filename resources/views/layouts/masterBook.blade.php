@@ -28,15 +28,7 @@
 		@yield('contact')
 		<div class="container admin">
 			<div style="margin-top:80px;">
-				@if($table=='theloai' and $step === "showAll")@yield('admin')
-				@elseif($table=='cuonsach' and $step === "showAll")@yield('admin')
-				@elseif($table=='tacgia' and $step === "showAll")@yield('admin')
-				{{-- theloai --}}
-				@elseif($table=='theloai' and $step === "add")@yield('addCat')
-				@elseif($table=='theloai' and $step === "update")@yield('updateCat')
-				@elseif($table=='theloai' and $step === "delete")@yield('deleteCat')
-				{{-- book --}}
-				@elseif($table=='cuonsach' and $step === "add")@yield('addBook')
+				@if($table=='cuonsach' and $step === "add")@yield('addBook')
 				@elseif($table=='cuonsach' and $step === "update")@yield('updateBook')
 				@elseif($table=='cuonsach' and $step === "delete")@yield('deleteBook')
 				@endif

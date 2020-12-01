@@ -2,10 +2,7 @@ $(document).ready(function() {
     $('#search').keyup(function() {
         var str = $(this).val();
         $.ajax({
-            url: 'http://localhost:8000/search',
-            data: {
-                q: str
-            },
+            url: 'http://localhost:8000/search?q=' + str,
             error: function() {
                 $('#info').html('<p>An error has occurred</p>');
             },

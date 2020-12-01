@@ -33,6 +33,15 @@ Route::get('/form/{table}/{u_id}/edit', 'App\Http\Controllers\home@update');
 Route::get('/form/{table}/update', 'App\Http\Controllers\home@updates');
 Route::get('/form/{table}/{d_id}/delete', 'App\Http\Controllers\home@delete');
 
+// admin book
+Route::get('/form/{table}/create', 'App\Http\Controllers\home@intoForm');
+Route::post('/form/{table}/add', 'App\Http\Controllers\home@add');
+Route::get('/form/{table}/{b_id}/edit', 'App\Http\Controllers\home@update');
+Route::post('/form/{table}/update', 'App\Http\Controllers\home@updates');
+Route::get('/form/{table}/{b_id}/delete', 'App\Http\Controllers\home@delete');
+Route::get('file','App\Http\Controllers\home@indexs');
+Route::post('file','App\Http\Controllers\home@doUpload');
+
 // login admin
 Route::get('loginAdmin', 'App\Http\Controllers\loginAdmin@formLogin');
 Route::post('post-loginAdmin', 'App\Http\Controllers\loginAdmin@postLoginAdmin'); 

@@ -65,10 +65,10 @@
                         <th scope="col">ID</th>
                         <th scope="col">Hình ảnh</th>
                         <th scope="col">Tên</th>
-                        <th scope="col">Nhà văn</th>
+                        <th scope="col" style="text-align:center;">Trạng thái</th>
                         <th scope="col">Gía</th>
-                        <th scope="col">Xoá</th>
                         <th scope="col">Sửa</th>
+                        <th scope="col">Xoá</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -77,14 +77,15 @@
                         <th scope="row">{{$books->id}}</th>
                         <td><img src="/images/{{$books->image}}" alt=""></td>
                         <td>{{$books->name}}</td>
-                        <td></td>
+                        <td style="text-align:center;"><input type="radio" id="hi" class="mr-2" {{$books->status == 1 ? 'checked' : ''}} ></td>
                         <td>{{$books->price}}</td>
-                        <td><button class="btn btn-success">Delete</button></td>
-                        <td><button class="btn btn-danger">Update</button></td>
+                        <td><a href="/form/cuonsach/{{$books->id}}/edit" class="btn btn-success">Sửa</a></td>
+                        <td><a href="/form/cuonsach/{{$books->id}}/delete" class="btn btn-danger">Xóa</a></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+            <a style="margin-top:-60px;" class="btn btn-success" href="/form/cuonsach/create">Thêm</a>
             <div class="d-flex justify-content-center">
                 {!! $book->links() !!}
             </div>
@@ -163,6 +164,7 @@
 
 {{-- add category  --}}
 @section('addCat')
+<div style="padding : 40px 100px">
 <p><a class="btn btn-primary" href="{{ url('/admin/theloai/showAll') }}">Về danh sách</a></p>
 <div class="col-xs-4 col-xs-offset-4">
 	<h4>Thêm Thể Loại</h4>
@@ -174,8 +176,10 @@
 		<button type="submit" class="btn btn-primary">Thêm</button>
 	</form>
 </div>
+</div
 @endsection
 @section('updateCat')
+<div style="padding : 40px 100px">
 <p><a class="btn btn-primary" href="{{ url('/admin/theloai/showAll') }}">Về danh sách</a></p>
 <div class="col-xs-4 col-xs-offset-4">
     <h4>Sửa Thể Loại</h4>
@@ -190,4 +194,7 @@
         <button type="submit" class="btn btn-primary">Lưu lại</button>
 	</form>
 </div>
+</div>
 @endsection
+
+{{-- add book --}}
