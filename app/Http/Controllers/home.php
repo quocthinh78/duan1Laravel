@@ -123,11 +123,9 @@ class home extends Controller
         $user = auth()->user();
         Mail::to($user)->send(new MailNotify($user));
 
-        if (Mail::failures()) {
-            return response()->Fail('Sorry! Please try again latter');
-        } else {
-            return response()->success('Great! Successfully send in your mail');
-        }
+        
+        return redirect('/contact');
+        
     }
     public function new()
     {
@@ -315,5 +313,10 @@ class home extends Controller
         $file->move('public', $file->getClientOriginalName());
         // hàm sẽ trả về đường dẫn mới của file trên server nếu thành công
         // còn nếu không nó sẽ raise ra exception.
+    }
+    public function navBook(){
+        $category = DB::table('category')->get();
+        $navBook = DB::table('book1')->get();
+        return view('page.navbarProduct' , ['navBook' => $navBook , 'category' => $category]);
     }
 }

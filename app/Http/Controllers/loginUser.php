@@ -13,11 +13,11 @@ class loginUser extends Controller
 {
     public function showLogin()
     {
-        return view('page.formLoginUser');
+        return view('particals.formUserLogin');
     }
     public function showRegister()
     {
-        return view('page.formRegisterUser');
+        return view('particals.formRegisterUser');
     }
     public function postLoginUser(Request $request)
     {

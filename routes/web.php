@@ -41,7 +41,8 @@ Route::post('/form/{table}/update', 'App\Http\Controllers\home@updates');
 Route::get('/form/{table}/{b_id}/delete', 'App\Http\Controllers\home@delete');
 Route::get('file','App\Http\Controllers\home@indexs');
 Route::post('file','App\Http\Controllers\home@doUpload');
-
+// admin navbar
+Route::get('sản-phẩm','App\Http\Controllers\home@navBook');
 // login admin
 Route::get('loginAdmin', 'App\Http\Controllers\loginAdmin@formLogin');
 Route::post('post-loginAdmin', 'App\Http\Controllers\loginAdmin@postLoginAdmin'); 

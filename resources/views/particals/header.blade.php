@@ -10,26 +10,23 @@
             <div class="collapse navbar-collapse menu" id="navbarNavAltMarkup">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Trang chủ<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sản phẩm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Thể loại</a>
+                        <a class="nav-link" href="">Thể loại</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             @foreach ($category as $cat)
                             <a class="dropdown-item" href="/category-{{$cat->name}}">{{$cat->name}}</a> @endforeach
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Thông tin</a>
+                        <a class="nav-link" href="">Thông tin</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#">Dịch vụ</a>
+                        <a class="nav-link" href="/contact">Liên hệ</a>
                     </li>
                     <li class="nav-item ml-5">
-                        <a class="nav-link" onclick="userShow()">
+                        <a class="nav-link" href="/loginUser">
                             <i style="font-size:16px;" class="fas fa-boder fa-user">@if(Session::has('UserSesion') != null) {{Session::get('UserSesion')->name}} @endif</i>
                         </a>
                     </li>

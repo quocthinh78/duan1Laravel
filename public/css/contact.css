@@ -65,16 +65,16 @@
     vertical-align: middle;
 }
 
-.box>.icon:hover>.image {
+.box>.icon:hover .image {
     background: #333;
 }
 
-.box>.icon>.image>i {
+.box>.icon>.image i {
     font-size: 36px !important;
     color: #fff !important;
 }
 
-.box>.icon:hover>.image>i {
+.box>.icon:hover>.image i {
     color: white !important;
 }
 

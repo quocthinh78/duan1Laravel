@@ -10,13 +10,13 @@
             <div class="collapse navbar-collapse menu" id="navbarNavAltMarkup">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/admin/theloai/showAll">Cập nhật<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sản phẩm</a>
+                        <a class="nav-link" href="/sản-phẩm">Sản phẩm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Thể loại</a>
+                        <a class="nav-link" href="">Thể loại</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             @foreach ($category as $cat)
                             <a class="dropdown-item" href="/category-{{$cat->name}}">{{$cat->name}}</a> 
@@ -24,7 +24,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Thống kê</a>
+                        <a class="nav-link" href="">Thống kê</a>
                     </li>
                     <li class="user pl-5">
                         <i class=" mr-1 fas fa-user"></i> @if(Session::has('AdminSesion') != null) {{Session::get('AdminSesion')->name}} @endif
