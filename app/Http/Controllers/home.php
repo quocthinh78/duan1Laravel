@@ -134,14 +134,16 @@ class home extends Controller
     }
     public function changeAdmin($table, $step, Request $request)
     {
-        $category = DB::table('category')->orderBy('id', 'desc')->get();
+        $category = DB::table('category')->orderBy('id', 'desc')->Paginate(6);
         $data = DB::table('category')->first();
         $author = DB::table('author')->orderBy('id', 'desc')->Paginate(6);
         $book = DB::table('book1')->orderBy('id', 'desc')->Paginate(6);
+        $bill = DB::table('bill')->Paginate(6);
         return view('page.admin', [
             'category'  => $category,
             'book'      => $book,
             'author'    => $author,
+            'bill'      => $bill,
             'table'     => $table,
             'step' => $step,
             'data' => $data
@@ -162,10 +164,11 @@ class home extends Controller
                 'authors'    => $authors,
                 'table' => $table,
                 'step' => 'add',
-                'datas' => $data
+                'data' => $data
             ]);
         }
         if ($table == 'cuonsach') {
+            $data = DB::table('book1')->where('id', '=', 20)->first();
             return view('page.adminBook', [
                 'category'  => $category,
                 'book'      => $book,
@@ -194,11 +197,8 @@ class home extends Controller
 
             $file = $request->hinh;
             $filename = $file->getClientOriginalName();
-            $file->move('images', $file->getClientOriginalName());
-
-
-
-
+            $uploadPath = public_path('/images');
+            $file->move($uploadPath, $file->getClientOriginalName());
             $smallDes = 'Văn chương dành cho tuổi mới lớn.';
             $intro = 'Với tác phẩm mới, Nguyễn Nhật Ánh tiếp tục chinh phục bạn đọc bằng câu chuyện cổ tích. Dù cổ điển hay hiện đại, tình yêu trong truyện của Nguyễn Nhật Ánh vẫn sẽ chiến thắng.';
             $review = 'Nấu một bữa ăn ngon cho gia đình là niềm hạnh phúc tuyệt vời của người mẹ, người vợ. Đôi khi, những món ăn chơi đơn giản sẽ là bí quyết tốt nhất giúp bạn có thể chuẩn bị mâm cơm đầy đù chất dinh dưỡng và ngon miệng mà không quá mất nhiều thời gian. Cuốn sách giới thiệu những món ăn thường gặp nhưng không phải ai cũng biết cách chế biến đúng cách: Bún mắm cá cơm, nộm mướp đắng, ngao xào lá quế, khoai môn cuộn tôm...
@@ -319,4 +319,5 @@ class home extends Controller
         $navBook = DB::table('book1')->get();
         return view('page.navbarProduct' , ['navBook' => $navBook , 'category' => $category]);
     }
+   
 }

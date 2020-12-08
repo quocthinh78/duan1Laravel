@@ -94,6 +94,7 @@ class loginUser extends Controller
     {
         // Session::flush();
         $request->session()->forget('UserSesion');
+        $request->session()->flush();
         Auth::logout();
         return Redirect('/');
     }

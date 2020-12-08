@@ -13,6 +13,9 @@
         <li class="nav-item">
             <a class="nav-link active" id="author-tab"  href="/admin/tacgia/showAll" role="tab" >Nhà văn</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link " id="author-tab"  href="/admin/donhang/showAll" role="tab" >Đơn hàng</a>
+        </li>
     </ul>
     <div class="tab-content" id="myTabContent">
         <div style="padding-bottom : 30px;" class="tab-pane fade show active" id="author" role="tabpanel" aria-labelledby="author-tab">
@@ -55,6 +58,9 @@
         </li>
         <li class="nav-item">
             <a class="nav-link " id="author-tab"  href="/admin/tacgia/showAll" role="tab" >Nhà văn</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " id="author-tab"  href="/admin/donhang/showAll" role="tab" >Đơn hàng</a>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -104,9 +110,12 @@
         <li class="nav-item">
             <a class="nav-link " id="author-tab"  href="/admin/tacgia/showAll" role="tab" >Nhà văn</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link " id="author-tab"  href="/admin/donhang/showAll" role="tab" >Đơn hàng</a>
+        </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-        <div style="padding-bottom : 30px;" class="tab-pane fade show active" id="book" role="tabpanel" aria-labelledby="book-tab">
+        <div style="padding-bottom : 30px;" class="tab-pane fade show active" role="tabpanel" aria-labelledby="book-tab">
             <table class="table">
                 <thead class="thead-light">
                     <tr>
@@ -127,7 +136,60 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="d-flex justify-content-center">
+                {!! $category->links() !!}
+            </div>
             <a style="margin-top:-60px;" class="btn btn-success" href="/form/theloai/create">Thêm</a>
+        </div>
+    </div>
+</div>
+@elseif($table=='donhang')
+<div class="container">
+    <ul class="nav nav-tabs " id="myTab" role="tablist" style="margin-top:100px;">
+        <li class="nav-item">
+            <a class="nav-link active" id="cat-tab"  href="/admin/theloai/showAll" role="tab" aria-controls="cat" aria-selected="true">Thể loại</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " id="book-tab"  href="/admin/cuonsach/showAll" role="tab">Tác phẩm</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " id="author-tab"  href="/admin/tacgia/showAll" role="tab" >Nhà văn</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " id="bill-tab"  href="/admin/donhang/showAll" role="tab" >Đơn hàng</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div style="padding-bottom : 30px;" class="tab-pane fade show active" id="book" role="tabpanel" aria-labelledby="book-tab">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Tên</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Số sản phẩm</th>
+                        <th scope="col">Tổng sản phẩm</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Chi tiết đơn hàng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($bill as $bills)
+                    <tr>
+                        <th scope="row">{{$bills->id}}</th>
+                        <td>{{$bills->ten}}</td>
+                        <th>{{$bills->email}}</th>
+                        <td>{{$bills->tongsoluong}}</td>
+                        <td>{{$bills->loai}}</td>
+                        <td>{{$bills->tonggia}}</td>
+                        <td><a class="btn btn-success" href="/showCarts/{{$bills->id}}">Xem</a></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                {!! $bill->links() !!}
+            </div>
         </div>
     </div>
 </div>
@@ -186,10 +248,10 @@
     <hr>
 	<form action="{{ url('/form/theloai/update') }}" method="get">
 		<input type="hidden" id="_token" name="_token" value="{!! csrf_token() !!}" />
-    <input type="hidden" id="id" name="id" value="{{$data->id}}" />
+    <input type="hidden" id="id" name="id" value="{{$step == 'add' ? "" : $data->id}}" />
 		<div class="form-group">
 		<label>Tên thể loại</label>
-        <input type="text" class="form-control" value="{{$data->name}}" id="name" name="name" placeholder="Tên thể loại" maxlength="255"  required />
+        <input type="text" class="form-control" value="{{$step == 'add' ? "" : $data->name}}" id="name" name="name" placeholder="Tên thể loại" maxlength="255"  required />
 		</div>
         <button type="submit" class="btn btn-primary">Lưu lại</button>
 	</form>

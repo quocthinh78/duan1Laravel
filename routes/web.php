@@ -65,4 +65,6 @@ Route::get('dashboard', 'App\Http\Controllers\loginUser@dashboard');
  Route::get('/add-cart/{id}', 'App\Http\Controllers\cartt@addCart');
  Route::get('/delete-cart/{id}', 'App\Http\Controllers\cartt@deleteCart');
  Route::get('/cart', 'App\Http\Controllers\cartt@showCart');
+ Route::get('/BuyCart', 'App\Http\Controllers\cartt@BuyCart');
+ Route::get('/showCarts/{id}', 'App\Http\Controllers\cartt@showCarts');
  

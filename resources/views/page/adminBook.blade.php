@@ -50,9 +50,8 @@
             <input type="hidden" id="id" name="id" value="{{$datas->id}}" />
             <div class="form-group">
                 <label for="">Tên sách</label>
-                <input type="text" class="mb-3 form-control" value={{$datas->review}}  name="cuonsach">
+                <input type="text" class="mb-3 form-control" value={{$datas->name}}  name="cuonsach">
                 <label  for="">Giá sách</label>
-                <?php var_dump($datas); ?>
                 <input type="text" class=" mb-3 form-control" value={{$datas->price}}   name="price" placeholder="Giá" maxlength="255" required />
                 <label style="display : block" for="">Trạng thái</label>
                 <input type="radio" id="hi" class="mr-2" name="status" value="1" {{$datas->status == 1 ? 'checked' : ''}}>Hiện

@@ -13,42 +13,17 @@
         <link rel="stylesheet" href="/css/admin.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
 		<script src="https://code.jquery.com/jquery-latest.js"></script>
-		<script>
-			// $(function(){
-			// 	$('.nav-link a').click(function(){
-			// 		location.href = '/admin';
-			// 	});
-			// });
-			
-			
-		</script>
 	</head>
     <body>
 		@include('particals.navbarAdmin')
-		@yield('contact')
-		<div class="container admin">
-			<div style="margin-top:80px;">
-				@if($table=='theloai' and $step === "showAll")@yield('admin')
-				@elseif($table=='cuonsach' and $step === "showAll")@yield('admin')
-				@elseif($table=='tacgia' and $step === "showAll")@yield('admin')
-				@elseif($table=='donhang' and $step === "showAll")@yield('admin')
-				{{-- theloai --}}
-				@elseif($table=='theloai' and $step === "add")@yield('addCat')
-				@elseif($table=='theloai' and $step === "update")@yield('updateCat')
-				@elseif($table=='theloai' and $step === "delete")@yield('deleteCat')
-				{{-- book --}}
-				@elseif($table=='cuonsach' and $step === "add")@yield('addBook')
-				@elseif($table=='cuonsach' and $step === "update")@yield('updateBook')
-				@elseif($table=='cuonsach' and $step === "delete")@yield('deleteBook')
-				@endif
-			</div>
-		</div>
+		@yield('carts')
 
 
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script type ="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 		<script src="/js/template.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 		<script src="/js/ajax.js"></script>
 </body>
 </html>
