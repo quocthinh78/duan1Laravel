@@ -170,6 +170,7 @@
                         <th scope="col">Số sản phẩm</th>
                         <th scope="col">Tổng sản phẩm</th>
                         <th scope="col">Tổng tiền</th>
+                        <th>Trạng thái</th>
                         <th scope="col">Chi tiết đơn hàng</th>
                     </tr>
                 </thead>
@@ -178,10 +179,11 @@
                     <tr>
                         <th scope="row">{{$bills->id}}</th>
                         <td>{{$bills->ten}}</td>
-                        <th>{{$bills->email}}</th>
+                        <td>{{$bills->email}}</td>
                         <td>{{$bills->tongsoluong}}</td>
                         <td>{{$bills->loai}}</td>
                         <td>{{$bills->tonggia}}</td>
+                        <td>{{$bills->status}}</td>
                         <td><a class="btn btn-success" href="/showCarts/{{$bills->id}}">Xem</a></td>
                     </tr>
                     @endforeach

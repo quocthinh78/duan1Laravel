@@ -55,8 +55,8 @@ class cartt extends Controller
             $nameUser = Session::get('UserSesion')->name;
             $email = Session::get('UserSesion')->email;
             DB::insert(
-                'insert into bill values (?, ? , ? , ? , ? , ?)',
-                [null, $email , $totalQuanty, $length , $totalPrice, $nameUser]
+                'insert into bill values (?, ? , ? , ? , ? , ? , ? )',
+                [null, $email , $totalQuanty, $length , $totalPrice, $nameUser , 'Chưa xác nhận']
             );
             // bill product
             $query = DB::table('bill')->orderBy('id', 'desc')->first()->id;
@@ -86,5 +86,11 @@ class cartt extends Controller
         $bill = DB::table('bill')->where('id' , '=' , $id)->get();
         $category = DB::table('category')->get();
         return view('page.carts' , ['bill' => $bill , 'billproduct' => $billproduct ,'category' => $category]);
+    }
+    public function statusCart($id){
+        DB::table('bill')
+              ->where('id', '=' , $id)
+              ->update(['status' => 'Đã xác nhận']);
+        return redirect("/admin/donhang/showAll");
     }
 }

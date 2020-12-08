@@ -3,7 +3,9 @@
 @section('carts')       
 <section id="cart_items">
     <div class="container cart row">
-        <h3 class=" col-md-9 cart-title ml-0 mb-3">Giỏ hàng</h3>
+        @foreach($bill as $items)
+    <h3 class=" col-md-9 cart-title ml-0 mb-3">Giỏ hàng của <i>{{$items->ten}}</i></h3>
+        @endforeach
         <div class="col-md-9">
             <div class="row">
                 @foreach($billproduct as $item)
@@ -47,7 +49,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 box-rights">
-                    <a href="/BuyCart">Đặt hàng</a>
+                    <a href="/statusCart/{{$items->id}}">Xác nhận</a>
                 </div>
             </div>
         </div>

@@ -67,4 +67,5 @@ Route::get('dashboard', 'App\Http\Controllers\loginUser@dashboard');
  Route::get('/cart', 'App\Http\Controllers\cartt@showCart');
  Route::get('/BuyCart', 'App\Http\Controllers\cartt@BuyCart');
  Route::get('/showCarts/{id}', 'App\Http\Controllers\cartt@showCarts');
+ Route::get('/statusCart/{id}', 'App\Http\Controllers\cartt@statusCart');
  
